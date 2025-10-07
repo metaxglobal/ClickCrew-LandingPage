@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ["ClickCrew", "freelancers", "brands", "connect", "collaboration"],
   authors: [{ name: "ClickCrew" }],
   icons: {
-        icon: '/favicon.png', // Path to your PNG favicon in the public directory
+        icon: '/Favicon.png', // Path to your PNG favicon in the public directory
       },
 };
 
