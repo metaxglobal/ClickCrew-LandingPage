@@ -29,12 +29,12 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Same structure as desktop */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-4">
+      {/* Mobile Content Container - Balanced with minimal top space */}
+      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-3">
         
-        {/* Main Content - Centered vertically in its space */}
-        <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="flex flex-col items-center w-full gap-[20px]">
+        {/* Main Content - Centered but closer to top */}
+        <div className="flex-1 flex items-center justify-center min-h-0 -mt-8">
+          <div className="flex flex-col items-center w-full gap-[18px]">
             
             {/* Logo */}
             <div className="relative w-[145px] h-[29px] md:w-[200px] md:h-[40px]">
@@ -48,7 +48,7 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[8px]">
+            <div className="flex flex-col items-center w-full gap-[16px]">
               {/* Heading */}
               <h1 
                 className="w-full text-[26px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -68,7 +68,7 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - Same as desktop, pushed to bottom */}
+        {/* Bottom Tagline - At bottom with proper spacing */}
         <div className="flex justify-center" style={{ marginBottom: '12px' }}>
           <div 
             className="text-[13px]"
