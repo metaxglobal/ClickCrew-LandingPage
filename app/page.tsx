@@ -30,14 +30,14 @@ const MobileLayout = () => {
       </div>
 
       {/* Mobile Content Container - Same structure as desktop */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-6">
+      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-4">
         
         {/* Main Content - Centered vertically in its space */}
         <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="flex flex-col items-center w-full gap-[24px]">
+          <div className="flex flex-col items-center w-full gap-[20px]">
             
             {/* Logo */}
-            <div className="relative w-[155px] h-[31px] md:w-[200px] md:h-[40px]">
+            <div className="relative w-[145px] h-[29px] md:w-[200px] md:h-[40px]">
               <Image
                 src="/logo.svg"
                 alt="ClickCrew Logo"
@@ -48,10 +48,10 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[10px]">
+            <div className="flex flex-col items-center w-full gap-[8px]">
               {/* Heading */}
               <h1 
-                className="w-full text-[28px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
+                className="w-full text-[26px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
                 style={{ lineHeight: '1.1' }}
               >
                 Launching Soon🚀
@@ -59,8 +59,8 @@ const MobileLayout = () => {
 
               {/* Description */}
               <p 
-                className="w-full text-[15px] md:text-[18px] font-normal text-center text-[#767676] max-w-[320px] md:max-w-[500px]"
-                style={{ lineHeight: '1.4', wordWrap: 'break-word' }}
+                className="w-full text-[14px] md:text-[18px] font-normal text-center text-[#767676] max-w-[310px] md:max-w-[500px]"
+                style={{ lineHeight: '1.35', wordWrap: 'break-word' }}
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
               </p>
@@ -69,7 +69,7 @@ const MobileLayout = () => {
         </div>
 
         {/* Bottom Tagline - Same as desktop, pushed to bottom */}
-        <div className="flex justify-center" style={{ marginBottom: '16px' }}>
+        <div className="flex justify-center" style={{ marginBottom: '12px' }}>
           <div 
             className="text-[13px]"
             style={{
