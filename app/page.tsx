@@ -17,7 +17,7 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <main className="relative w-full bg-white overflow-hidden">
+    <main className="relative min-h-screen w-full bg-white overflow-x-hidden flex items-center justify-center py-8">
       {/* Background Grid Pattern - Responsive positioning */}
       <div 
         className="absolute pointer-events-none select-none opacity-15"
@@ -55,16 +55,15 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Main Content Container - Mobile First with Safe Margins and Top Padding */}
-      <div className="relative z-10 w-full max-w-[343px] mx-auto
+      {/* Main Content Container - Properly centered with Figma spacing */}
+      <div className="relative z-10 w-full max-w-[343px] mx-auto px-4
                       sm:max-w-[540px]
                       md:max-w-[688px]
                       lg:max-w-[900px]
-                      xl:max-w-[1200px]"
-           style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '96px' }}>
+                      xl:max-w-[1200px]">
         
-        {/* Content Stack - Vertical Layout with exact Figma spacing */}
-        <div className="flex flex-col items-center pb-8" style={{ gap: '418px' }}>
+        {/* Content Stack - Vertical Layout */}
+        <div className="flex flex-col items-center justify-center" style={{ gap: '200px' }}>
           
           {/* Top Section: Logo and Hero Content */}
           <div className="flex flex-col items-center w-full" style={{ gap: '39px' }}>
@@ -81,12 +80,15 @@ export default function HomePage() {
             </div>
 
             {/* Hero Text Block */}
-            <div className="flex flex-col items-center w-full max-w-[343px] md:max-w-[600px] lg:max-w-[800px] wordWrap: 'break-word'" style={{ gap: '12px' }}>
+            <div className="flex flex-col items-center w-full" style={{ gap: '12px' }}>
               {/* Main Heading with Rocket Emoji - In one line */}
-              <h1 className="w-full text-[31px] leading-tight font-bold text-center text-[#1E1E1E]
-                             md:text-[42px] md:leading-tight
-                             lg:text-[56px] lg:leading-tight
-                             xl:text-[64px] xl:leading-tight">
+              <h1 
+                className="w-full text-[31px] font-bold text-center text-[#1E1E1E]
+                           md:text-[42px]
+                           lg:text-[56px]
+                           xl:text-[64px]"
+                style={{ lineHeight: '1.2' }}
+              >
                 Launching Soon🚀
               </h1>
 
@@ -96,8 +98,9 @@ export default function HomePage() {
                            md:text-[18px]
                            lg:text-[20px]"
                 style={{
-                  lineHeight: '1.4',
-                  wordWrap: 'break-word'
+                  lineHeight: '1.5',
+                  wordWrap: 'break-word',
+                  maxWidth: '343px'
                 }}
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
