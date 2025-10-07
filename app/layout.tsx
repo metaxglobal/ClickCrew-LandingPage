@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.",
   keywords: ["ClickCrew", "freelancers", "brands", "connect", "collaboration"],
   authors: [{ name: "ClickCrew" }],
+  icons: {
+        icon: '/favicon.png', // Path to your PNG favicon in the public directory
+      },
 };
 
 export const viewport: Viewport = {
