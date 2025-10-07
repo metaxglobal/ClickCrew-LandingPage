@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -6,7 +6,12 @@ export const metadata: Metadata = {
   description: "We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.",
   keywords: ["ClickCrew", "freelancers", "brands", "connect", "collaboration"],
   authors: [{ name: "ClickCrew" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

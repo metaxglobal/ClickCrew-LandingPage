@@ -64,7 +64,7 @@ export default function HomePage() {
            style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '142px' }}>
         
         {/* Content Stack - Vertical Layout with exact Figma spacing */}
-        <div className="flex flex-col items-center" style={{ gap: '418px' }}>
+        <div className="flex flex-col items-center" style={{ gap: '200px' }}>
           
           {/* Top Section: Logo and Hero Content */}
           <div className="flex flex-col items-center w-full" style={{ gap: '39px' }}>
