@@ -61,7 +61,7 @@ export default function HomePage() {
                       md:max-w-[688px]
                       lg:max-w-[900px]
                       xl:max-w-[1200px]"
-           style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '142px' }}>
+           style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '112px' }}>
         
         {/* Content Stack - Vertical Layout with exact Figma spacing */}
         <div className="flex flex-col items-center" style={{ gap: '200px' }}>
