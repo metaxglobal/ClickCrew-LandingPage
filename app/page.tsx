@@ -245,7 +245,7 @@ export default function HomePage() {
       `}</style>
 
       {/* Mobile Layout (< 1024px) */}
-      <div className="lg:hidden w-full min-h-screen">
+      <div className="lg:hidden w-full min-h-screen flex items-center justify-center">
         <MobileLayout />
       </div>
 
