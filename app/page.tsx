@@ -29,18 +29,18 @@ const MobileLayout = () => {
       </div>
 
       {/* Mobile Content Container - Constrained to fit all content */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] py-3">
+      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] py-2">
         
-        {/* Main Content - With max-height to ensure bottom box is visible */}
+        {/* Main Content - With max-height to ensure bottom box is fully visible */}
         <div 
           className="flex items-center justify-center"
           style={{ 
-            maxHeight: 'calc(100vh - 100px)', // Reserve space for bottom box and padding
+            maxHeight: 'calc(100vh - 130px)', // Reserve more space for bottom box visibility
             flex: '1 1 auto',
             minHeight: 0 
           }}
         >
-          <div className="flex flex-col items-center w-full gap-[14px] sm:gap-[18px] md:gap-[22px]">
+          <div className="flex flex-col items-center w-full gap-[10px] sm:gap-[14px] md:gap-[18px]">
             
             {/* Logo */}
             <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -54,7 +54,7 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[8px] sm:gap-[10px] md:gap-[12px]">
+            <div className="flex flex-col items-center w-full gap-[6px] sm:gap-[8px] md:gap-[10px]">
               {/* Heading - Original size */}
               <h1 
                 className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -75,7 +75,7 @@ const MobileLayout = () => {
         </div>
 
         {/* Bottom Tagline - Always visible at bottom */}
-        <div className="flex justify-center items-end pt-3" style={{ marginBottom: '16px' }}>
+        <div className="flex justify-center items-end pt-2" style={{ marginBottom: '12px' }}>
           <div 
             className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
