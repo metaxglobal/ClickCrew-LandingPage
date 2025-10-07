@@ -120,10 +120,10 @@ const DesktopLayout = () => {
                       lg:max-w-[800px] 
                       xl:max-w-[1005px] 
                       2xl:max-w-[1200px] 
-                      mx-auto">
+                      mx-auto justify-between py-8">
         
         {/* Main Content - Centered with controlled spacing */}
-        <div className="flex-1 flex items-center justify-center min-h-0 py-12">
+        <div className="flex-1 flex items-center justify-center min-h-0">
           <div className="flex flex-col items-center w-full 
                           lg:gap-[42px] 
                           xl:gap-[48px]">
@@ -171,8 +171,8 @@ const DesktopLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - With proper bottom margin */}
-        <div className="flex justify-center pb-12 pt-6">
+        {/* Bottom Tagline - With proper spacing from bottom edge */}
+        <div className="flex justify-center items-end" style={{ marginBottom: '36px' }}>
           <div 
             className="lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
