@@ -49,7 +49,7 @@ export default function HomePage() {
       </div>
 
       {/* Main Content Container - Responsive max-widths */}
-      <div className="relative z-10 w-full h-full max-w-[343px] mx-auto px-4 flex flex-col justify-between py-8
+      <div className="relative z-10 w-full h-full max-w-[343px] mx-auto px-4 flex flex-col justify-between py-4 lg:py-8
                       sm:max-w-[540px]
                       md:max-w-[688px]
                       lg:max-w-[800px]
@@ -112,8 +112,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom Section: Tagline with outline - Fixed at bottom with 36px padding */}
-        <div className="flex justify-center pb-12">
+        {/* Bottom Section: Tagline with outline - Fixed at bottom with spacing */}
+        <div className="flex justify-center pb-6 lg:pb-9">
           <div 
             className="text-[13px] lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
