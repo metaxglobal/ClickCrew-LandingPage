@@ -18,11 +18,10 @@ import Image from 'next/image';
 export default function HomePage() {
   return (
     <main className="relative h-screen w-full bg-white overflow-hidden flex items-center justify-center">
-      {/* Background Grid Pattern - Responsive positioning */}
+      {/* Background Grid Pattern - Mobile/Tablet only */}
       <div 
-        className="absolute pointer-events-none select-none opacity-15"
+        className="lg:hidden absolute pointer-events-none select-none opacity-15"
         style={{
-          // Mobile: zoomed out more to see full pattern
           left: '-340px',
           top: '-177px',
           width: '1055px',
@@ -34,15 +33,21 @@ export default function HomePage() {
           src="/background image.png"
           alt=""
           fill
-          className="object-cover md:object-contain"
+          className="object-cover"
           priority
           quality={90}
         />
       </div>
       
-      {/* Desktop Background - Full width */}
+      {/* Desktop Background - Full width for large screens */}
       <div 
-        className="hidden md:block absolute inset-0 pointer-events-none select-none opacity-80"
+        className="hidden lg:block absolute pointer-events-none select-none opacity-15"
+        style={{
+          left: '-7px',
+          top: '-277px',
+          width: '1455px',
+          height: '1455px',
+        }}
         aria-hidden="true"
       >
         <Image
@@ -55,21 +60,26 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Main Content Container - Properly centered with Figma spacing */}
+      {/* Main Content Container - Responsive max-widths */}
       <div className="relative z-10 w-full max-w-[343px] mx-auto px-4
                       sm:max-w-[540px]
                       md:max-w-[688px]
-                      lg:max-w-[900px]
-                      xl:max-w-[1200px]">
+                      lg:max-w-[800px]
+                      xl:max-w-[1005px]
+                      2xl:max-w-[1200px]">
         
-        {/* Content Stack - Vertical Layout */}
-        <div className="flex flex-col items-center justify-center" style={{ gap: '200px' }}>
+        {/* Content Stack - Responsive gap spacing */}
+        <div className="flex flex-col items-center justify-center gap-[200px] lg:gap-[240px] xl:gap-[317px]">
           
           {/* Top Section: Logo and Hero Content */}
-          <div className="flex flex-col items-center w-full" style={{ gap: '39px' }}>
+          <div className="flex flex-col items-center w-full gap-[39px] lg:gap-[42px] xl:gap-[48px]">
             
-            {/* Logo */}
-            <div className="relative w-[168px] h-[34px] md:w-[240px] md:h-[48px] lg:w-[280px] lg:h-[56px]">
+            {/* Logo - Responsive sizing */}
+            <div className="relative w-[168px] h-[34px] 
+                            md:w-[200px] md:h-[40px] 
+                            lg:w-[220px] lg:h-[44px]
+                            xl:w-[260px] xl:h-[52px]
+                            2xl:w-[300px] 2xl:h-[60px]">
               <Image
                 src="/logo.svg"
                 alt="ClickCrew Logo"
@@ -80,27 +90,34 @@ export default function HomePage() {
             </div>
 
             {/* Hero Text Block */}
-            <div className="flex flex-col items-center w-full" style={{ gap: '12px' }}>
-              {/* Main Heading with Rocket Emoji - In one line */}
+            <div className="flex flex-col items-center w-full gap-[12px] lg:gap-[15px] xl:gap-[18px]">
+              {/* Main Heading with Rocket Emoji - Responsive sizing */}
               <h1 
                 className="w-full text-[31px] font-bold text-center text-[#1E1E1E]
-                           md:text-[42px]
-                           lg:text-[56px]
-                           xl:text-[64px]"
+                           md:text-[38px]
+                           lg:text-[48px]
+                           xl:text-[64px]
+                           2xl:text-[72px]"
                 style={{ lineHeight: '1.2' }}
               >
                 Launching Soon🚀
               </h1>
 
-              {/* Description Text */}
+              {/* Description Text - Responsive sizing */}
               <p 
                 className="w-full text-[16px] font-normal text-center text-[#767676]
                            md:text-[18px]
-                           lg:text-[20px]"
+                           lg:text-[20px]
+                           xl:text-[24px]
+                           2xl:text-[26px]
+                           max-w-[343px]
+                           md:max-w-[500px]
+                           lg:max-w-[700px]
+                           xl:max-w-[900px]
+                           2xl:max-w-[1000px]"
                 style={{
                   lineHeight: '1.5',
-                  wordWrap: 'break-word',
-                  maxWidth: '343px'
+                  wordWrap: 'break-word'
                 }}
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
@@ -108,8 +125,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bottom Section: Tagline with outline - Exact Figma styling */}
+          {/* Bottom Section: Tagline with outline - Responsive */}
           <div 
+            className="text-[13px] lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
               padding: '10px',
               borderRadius: '12px',
@@ -123,7 +141,6 @@ export default function HomePage() {
             <div style={{
               textAlign: 'center',
               color: '#4361EE',
-              fontSize: '13px',
               fontFamily: 'Bricolage Grotesque',
               fontWeight: '400',
               wordWrap: 'break-word'
