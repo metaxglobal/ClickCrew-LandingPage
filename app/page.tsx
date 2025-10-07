@@ -17,7 +17,7 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-white overflow-hidden flex items-center justify-center">
+    <main className="relative w-full bg-white overflow-hidden">
       {/* Background Grid Pattern - Responsive positioning */}
       <div 
         className="absolute pointer-events-none select-none opacity-15"
@@ -64,7 +64,7 @@ export default function HomePage() {
            style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '96px' }}>
         
         {/* Content Stack - Vertical Layout with exact Figma spacing */}
-        <div className="flex flex-col items-center" style={{ gap: '180px' }}>
+        <div className="flex flex-col items-center pb-8" style={{ gap: '418px' }}>
           
           {/* Top Section: Logo and Hero Content */}
           <div className="flex flex-col items-center w-full" style={{ gap: '39px' }}>
@@ -91,11 +91,16 @@ export default function HomePage() {
               </h1>
 
               {/* Description Text */}
-              <p className="w-full text-[16px] leading-relaxed font-normal text-center text-[#767676]
-                            md:text-[18px] md:leading-relaxed
-                            lg:text-[20px] lg:leading-relaxed">
-                We're crafting something exciting to help freelancers and brands connect effortlessly. 
-                Stay tuned — the wait will be worth it.
+              <p 
+                className="w-full text-[16px] font-normal text-center text-[#767676]
+                           md:text-[18px]
+                           lg:text-[20px]"
+                style={{
+                  lineHeight: '1.4',
+                  wordWrap: 'break-word'
+                }}
+              >
+                We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
               </p>
             </div>
           </div>
