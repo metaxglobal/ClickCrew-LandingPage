@@ -29,13 +29,13 @@ const MobileLayout = () => {
       </div>
 
       {/* Mobile Content Container - Constrained to fit all content */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] py-2">
+      <div className="relative z-10 w-full min-h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] py-2">
         
         {/* Main Content - With max-height to ensure bottom box is fully visible */}
         <div 
           className="flex items-center justify-center"
           style={{ 
-            maxHeight: 'calc(100vh - 130px)', // Reserve more space for bottom box visibility
+            maxHeight: 'min(calc(100vh - 130px), calc(100dvh - 130px))', // Use dvh for better mobile browser support
             flex: '1 1 auto',
             minHeight: 0 
           }}
@@ -205,31 +205,52 @@ const DesktopLayout = () => {
   );
 };
 
-// Main Page Component with viewport height fix
+// Main Page Component with proper mobile viewport handling
 export default function HomePage() {
   return (
-    <main className="relative w-full h-screen min-h-screen bg-white overflow-hidden">
+    <main className="relative w-full min-h-screen bg-white">
       {/* Add styles to handle mobile viewport height properly */}
       <style jsx global>{`
         html, body {
           height: 100%;
-          overflow: hidden;
+          overflow-x: hidden;
         }
-        /* Handle mobile viewport height including address bar */
+        
+        /* Use dynamic viewport height for better mobile browser support */
+        main {
+          min-height: 100vh;
+          min-height: 100dvh; /* Dynamic viewport height - excludes browser UI */
+        }
+        
+        /* Fallback for older browsers */
         @supports (-webkit-touch-callout: none) {
           main {
             min-height: -webkit-fill-available;
           }
         }
+        
+        /* Enable vertical scroll on mobile only if needed */
+        @media (max-width: 1023px) {
+          html, body {
+            overflow-y: auto;
+          }
+        }
+        
+        /* Desktop keeps overflow hidden */
+        @media (min-width: 1024px) {
+          html, body {
+            overflow: hidden;
+          }
+        }
       `}</style>
 
       {/* Mobile Layout (< 1024px) */}
-      <div className="lg:hidden w-full h-full flex items-center justify-center">
+      <div className="lg:hidden w-full min-h-screen">
         <MobileLayout />
       </div>
 
       {/* Desktop Layout (>= 1024px) */}
-      <div className="hidden lg:flex w-full h-full items-center justify-center">
+      <div className="hidden lg:flex w-full h-screen items-center justify-center overflow-hidden">
         <DesktopLayout />
       </div>
     </main>
