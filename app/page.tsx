@@ -30,11 +30,11 @@ const MobileLayout = () => {
       </div>
 
       {/* Mobile Content Container with proper spacing */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]">
+      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-6">
         
-        {/* Main Content - Centered with controlled spacing */}
-        <div className="flex-1 flex items-center justify-center min-h-0 py-8">
-          <div className="flex flex-col items-center w-full gap-[39px]">
+        {/* Main Content - Centered with reduced spacing */}
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          <div className="flex flex-col items-center w-full gap-[32px]">
             
             {/* Logo */}
             <div className="relative w-[168px] h-[34px] md:w-[200px] md:h-[40px]">
@@ -68,8 +68,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - With proper bottom margin */}
-        <div className="flex justify-center pb-8 pt-4">
+        {/* Bottom Tagline - With proper spacing from bottom edge */}
+        <div className="flex justify-center items-end" style={{ marginBottom: '24px' }}>
           <div 
             className="text-[13px]"
             style={{
