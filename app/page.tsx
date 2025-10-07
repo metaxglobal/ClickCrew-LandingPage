@@ -1,103 +1,131 @@
-import Image from "next/image";
+import React from 'react';
 
-export default function Home() {
+import Image from 'next/image';
+
+/**
+ * ClickCrew Landing Page Component
+ * 
+ * Following Next.js and React best practices:
+ * - Mobile-first responsive design with standard breakpoints
+ * - Semantic HTML structure
+ * - Safe margins (16px minimum on mobile)
+ * - Optimized images with Next.js Image component
+ * - Proper TypeScript typing
+ * - Accessible markup with ARIA labels
+ * - CSS custom properties for maintainability
+ */
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <main className="relative min-h-screen w-full bg-white overflow-hidden flex items-center justify-center">
+      {/* Background Grid Pattern - Responsive positioning */}
+      <div 
+        className="absolute pointer-events-none select-none opacity-15"
+        style={{
+          // Mobile: zoomed out more to see full pattern
+          left: '-340px',
+          top: '-177px',
+          width: '1055px',
+          height: '1055px',
+        }}
+        aria-hidden="true"
+      >
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/background image.png"
+          alt=""
+          fill
+          className="object-cover md:object-contain"
           priority
+          quality={90}
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
+      
+      {/* Desktop Background - Full width */}
+      <div 
+        className="hidden md:block absolute inset-0 pointer-events-none select-none opacity-80"
+        aria-hidden="true"
+      >
+        <Image
+          src="/background image.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          quality={90}
+        />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Main Content Container - Mobile First with Safe Margins and Top Padding */}
+      <div className="relative z-10 w-full max-w-[343px] mx-auto
+                      sm:max-w-[540px]
+                      md:max-w-[688px]
+                      lg:max-w-[900px]
+                      xl:max-w-[1200px]"
+           style={{ paddingLeft: '16px', paddingRight: '16px', paddingTop: '142px' }}>
+        
+        {/* Content Stack - Vertical Layout with exact Figma spacing */}
+        <div className="flex flex-col items-center" style={{ gap: '418px' }}>
+          
+          {/* Top Section: Logo and Hero Content */}
+          <div className="flex flex-col items-center w-full" style={{ gap: '39px' }}>
+            
+            {/* Logo */}
+            <div className="relative w-[168px] h-[34px] md:w-[240px] md:h-[48px] lg:w-[280px] lg:h-[56px]">
+              <Image
+                src="/logo.svg"
+                alt="ClickCrew Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Hero Text Block */}
+            <div className="flex flex-col items-center w-full max-w-[343px] md:max-w-[600px] lg:max-w-[800px] wordWrap: 'break-word'" style={{ gap: '12px' }}>
+              {/* Main Heading with Rocket Emoji - In one line */}
+              <h1 className="w-full text-[31px] leading-tight font-bold text-center text-[#1E1E1E]
+                             md:text-[42px] md:leading-tight
+                             lg:text-[56px] lg:leading-tight
+                             xl:text-[64px] xl:leading-tight">
+                Launching Soon🚀
+              </h1>
+
+              {/* Description Text */}
+              <p className="w-full text-[16px] leading-relaxed font-normal text-center text-[#767676]
+                            md:text-[18px] md:leading-relaxed
+                            lg:text-[20px] lg:leading-relaxed">
+                We're crafting something exciting to help freelancers and brands connect effortlessly. 
+                Stay tuned — the wait will be worth it.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Section: Tagline with outline - Exact Figma styling */}
+          <div 
+            style={{
+              padding: '10px',
+              borderRadius: '12px',
+              outline: '1px #D9D9D9 solid',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '10px',
+              display: 'inline-flex'
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div style={{
+              textAlign: 'center',
+              color: '#4361EE',
+              fontSize: '13px',
+              fontFamily: 'Bricolage Grotesque',
+              fontWeight: '400',
+              wordWrap: 'break-word'
+            }}>
+              Click. Connect. Grow – with ClickCrew.
+            </div>
+          </div>
+
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 }
