@@ -32,8 +32,8 @@ const MobileLayout = () => {
       {/* Mobile Content Container - Balanced with minimal top space */}
       <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-3">
         
-        {/* Main Content - Centered but closer to top */}
-        <div className="flex-1 flex items-center justify-center min-h-0 -mt-8">
+        {/* Main Content - Pulled up significantly to reduce top gap */}
+        <div className="flex-1 flex items-center justify-center min-h-0 -mt-20">
           <div className="flex flex-col items-center w-full gap-[18px]">
             
             {/* Logo */}
