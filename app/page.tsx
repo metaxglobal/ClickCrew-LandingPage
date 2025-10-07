@@ -20,13 +20,7 @@ export default function HomePage() {
     <main className="relative h-screen w-full bg-white overflow-hidden flex items-center justify-center">
       {/* Background Grid Pattern - Mobile/Tablet only */}
       <div 
-        className="lg:hidden absolute pointer-events-none select-none opacity-15"
-        style={{
-          left: '-340px',
-          top: '-177px',
-          width: '1055px',
-          height: '1055px',
-        }}
+        className="lg:hidden absolute inset-0 pointer-events-none select-none opacity-80"
         aria-hidden="true"
       >
         <Image
@@ -41,13 +35,7 @@ export default function HomePage() {
       
       {/* Desktop Background - Full width for large screens */}
       <div 
-        className="hidden lg:block absolute pointer-events-none select-none opacity-15"
-        style={{
-          left: '-7px',
-          top: '-277px',
-          width: '1455px',
-          height: '1455px',
-        }}
+        className="hidden lg:block absolute inset-0 pointer-events-none select-none opacity-80"
         aria-hidden="true"
       >
         <Image
@@ -61,17 +49,15 @@ export default function HomePage() {
       </div>
 
       {/* Main Content Container - Responsive max-widths */}
-      <div className="relative z-10 w-full max-w-[343px] mx-auto px-4
+      <div className="relative z-10 w-full h-full max-w-[343px] mx-auto px-4 flex flex-col justify-between py-8
                       sm:max-w-[540px]
                       md:max-w-[688px]
                       lg:max-w-[800px]
                       xl:max-w-[1005px]
                       2xl:max-w-[1200px]">
         
-        {/* Content Stack - Responsive gap spacing */}
-        <div className="flex flex-col items-center justify-center gap-[200px] lg:gap-[240px] xl:gap-[317px]">
-          
-          {/* Top Section: Logo and Hero Content */}
+        {/* Top and Middle Content - Centered */}
+        <div className="flex-1 flex items-center justify-center">
           <div className="flex flex-col items-center w-full gap-[39px] lg:gap-[42px] xl:gap-[48px]">
             
             {/* Logo - Responsive sizing */}
@@ -124,8 +110,10 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Section: Tagline with outline - Responsive */}
+        {/* Bottom Section: Tagline with outline - Fixed at bottom with 36px padding */}
+        <div className="flex justify-center pb-12">
           <div 
             className="text-[13px] lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
@@ -148,8 +136,8 @@ export default function HomePage() {
               Click. Connect. Grow – with ClickCrew.
             </div>
           </div>
-
         </div>
+
       </div>
     </main>
   );
