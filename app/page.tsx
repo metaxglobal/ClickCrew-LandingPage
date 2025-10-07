@@ -1,13 +1,12 @@
+'use client';
 import Image from 'next/image';
+
 
 /**
  * ClickCrew Landing Page Component
  * 
- * Refactored with separate mobile and desktop layouts for better maintainability
- * and precise control over spacing and positioning.
- * 
- * Mobile: < 1024px (Mobile and Tablet)
- * Desktop: >= 1024px (Laptop, Desktop, Large screens)
+ * Fixed mobile layout to prevent scrolling and ensure all content
+ * fits within viewport on initial load
  */
 
 // Mobile Layout Component (< 1024px)
@@ -29,15 +28,15 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Balanced with minimal top space */}
+      {/* Mobile Content Container - Optimized to fit all content without scroll */}
       <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-3">
         
-        {/* Main Content - Pulled up significantly to reduce top gap */}
-        <div className="flex-1 flex items-center justify-center min-h-0 -mt-20">
-          <div className="flex flex-col items-center w-full gap-[18px]">
+        {/* Main Content - Centered with optimal spacing */}
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          <div className="flex flex-col items-center w-full gap-[18px] sm:gap-[22px] md:gap-[26px]">
             
             {/* Logo */}
-            <div className="relative w-[145px] h-[29px] md:w-[200px] md:h-[40px]">
+            <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
               <Image
                 src="/logo.svg"
                 alt="ClickCrew Logo"
@@ -48,18 +47,18 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[16px]">
-              {/* Heading */}
+            <div className="flex flex-col items-center w-full gap-[10px] sm:gap-[12px] md:gap-[14px]">
+              {/* Heading - Original size */}
               <h1 
-                className="w-full text-[26px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
+                className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
                 style={{ lineHeight: '1.1' }}
               >
                 Launching Soon🚀
               </h1>
 
-              {/* Description */}
+              {/* Description - Original size */}
               <p 
-                className="w-full text-[14px] md:text-[18px] font-normal text-center text-[#767676] max-w-[310px] md:max-w-[500px]"
+                className="w-full text-[14px] sm:text-[16px] md:text-[18px] font-normal text-center text-[#767676] max-w-[290px] sm:max-w-[450px] md:max-w-[500px]"
                 style={{ lineHeight: '1.35', wordWrap: 'break-word' }}
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
@@ -68,10 +67,10 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - At bottom with proper spacing */}
-        <div className="flex justify-center" style={{ marginBottom: '12px' }}>
+        {/* Bottom Tagline - With visible space at bottom */}
+        <div className="flex justify-center items-end" style={{ marginBottom: '16px' }}>
           <div 
-            className="text-[13px]"
+            className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
               padding: '10px',
               borderRadius: '12px',
@@ -199,10 +198,24 @@ const DesktopLayout = () => {
   );
 };
 
-// Main Page Component
+// Main Page Component with viewport height fix
 export default function HomePage() {
   return (
-    <main className="relative w-full h-screen bg-white overflow-hidden">
+    <main className="relative w-full h-screen min-h-screen bg-white overflow-hidden">
+      {/* Add styles to handle mobile viewport height properly */}
+      <style jsx global>{`
+        html, body {
+          height: 100%;
+          overflow: hidden;
+        }
+        /* Handle mobile viewport height including address bar */
+        @supports (-webkit-touch-callout: none) {
+          main {
+            min-height: -webkit-fill-available;
+          }
+        }
+      `}</style>
+
       {/* Mobile Layout (< 1024px) */}
       <div className="lg:hidden w-full h-full flex items-center justify-center">
         <MobileLayout />
