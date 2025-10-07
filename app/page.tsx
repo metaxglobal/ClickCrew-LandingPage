@@ -29,12 +29,12 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container with proper spacing */}
-      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-6">
+      {/* Mobile Content Container - Optimized to prevent scrolling */}
+      <div className="relative z-10 w-full h-full flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between pt-8 pb-6">
         
-        {/* Main Content - Centered with reduced spacing */}
-        <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="flex flex-col items-center w-full gap-[32px]">
+        {/* Main Content - Positioned higher to show all content */}
+        <div className="flex items-center justify-start mt-12">
+          <div className="flex flex-col items-center w-full gap-[28px]">
             
             {/* Logo */}
             <div className="relative w-[168px] h-[34px] md:w-[200px] md:h-[40px]">
@@ -48,7 +48,7 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[12px]">
+            <div className="flex flex-col items-center w-full gap-[10px]">
               {/* Heading */}
               <h1 
                 className="w-full text-[31px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -60,7 +60,7 @@ const MobileLayout = () => {
               {/* Description */}
               <p 
                 className="w-full text-[16px] md:text-[18px] font-normal text-center text-[#767676] max-w-[343px] md:max-w-[500px]"
-                style={{ lineHeight: '1.5', wordWrap: 'break-word' }}
+                style={{ lineHeight: '1.45', wordWrap: 'break-word' }}
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
               </p>
@@ -68,8 +68,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - With proper spacing from bottom edge */}
-        <div className="flex justify-center items-end" style={{ marginBottom: '24px' }}>
+        {/* Bottom Tagline - Fixed at bottom */}
+        <div className="flex justify-center" style={{ marginBottom: '20px', marginTop: 'auto' }}>
           <div 
             className="text-[13px]"
             style={{
