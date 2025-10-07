@@ -17,7 +17,7 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-white overflow-x-hidden flex items-center justify-center py-8">
+    <main className="relative h-screen w-full bg-white overflow-hidden flex items-center justify-center">
       {/* Background Grid Pattern - Responsive positioning */}
       <div 
         className="absolute pointer-events-none select-none opacity-15"
