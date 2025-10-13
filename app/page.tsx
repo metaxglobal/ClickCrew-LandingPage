@@ -28,11 +28,10 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content - Match Figma spacing exactly */}
+      {/* Mobile Content - Compact spacing to fit in viewport */}
       <div className="relative z-10 w-full h-screen flex flex-col items-center px-4">
-        
-        {/* Top spacing to match Figma (144px from top) */}
-        <div style={{ height: '144px' }} />
+        {/* Top spacing - reduced to fit all content */}
+        <div style={{ height: '60px' }} />
         
         {/* Logo */}
         <div className="relative w-[145px] h-[29px]">
@@ -45,8 +44,8 @@ const MobileLayout = () => {
           />
         </div>
         
-        {/* Gap after logo - from Figma measurements */}
-        <div style={{ height: '39px' }} />
+        {/* Gap after logo */}
+        <div style={{ height: '24px' }} />
         
         {/* Heading and Description together */}
         <div style={{ width: '343px', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
@@ -67,10 +66,10 @@ const MobileLayout = () => {
           </p>
         </div>
         
-        {/* Gap before contact - calculated from Figma */}
-        <div style={{ height: '47px' }} />
+        {/* Gap before contact - reduced */}
+        <div style={{ height: '28px' }} />
         
-        {/* Contact Section - matching Figma */}
+        {/* Contact Section - compact version */}
         <div style={{
           width: '220px',
           padding: '12px',
@@ -80,13 +79,13 @@ const MobileLayout = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '10px'
+          gap: '8px'
         }}>
           <div style={{
             width: '189px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '32px',
+            gap: '16px',
             alignItems: 'center'
           }}>
             <div style={{
@@ -104,7 +103,7 @@ const MobileLayout = () => {
               display: 'flex',
               flexDirection: 'column',
               width: '100%',
-              gap: '24px',
+              gap: '14px',
               alignItems: 'center'
             }}>
               {/* Company */}
@@ -153,14 +152,14 @@ const MobileLayout = () => {
         </div>
         
         {/* Flexible spacer to push footer to bottom */}
-        <div style={{ flex: 1 }} />
+        <div style={{ flex: 1, minHeight: '28px' }} />
         
-        {/* Bottom Tagline - positioned from Figma */}
+        {/* Bottom Tagline */}
         <div className="text-[13px]" style={{
           padding: '10px',
           borderRadius: '12px',
           outline: '1px #D9D9D9 solid',
-          marginBottom: '52px'
+          marginBottom: '40px'
         }}>
           <span style={{
             textAlign: 'center',
