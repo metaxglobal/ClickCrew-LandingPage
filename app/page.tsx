@@ -28,15 +28,15 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Like previous perfect version */}
-      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]"
+      {/* Mobile Content Container - All sections visible, no scroll */}
+      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between"
            style={{ 
-             paddingTop: '24px',
-             paddingBottom: 0
+             paddingTop: '32px',
+             paddingBottom: '70px'
            }}>
         
-        {/* Top Content - Logo, Heading, Description - Fixed size */}
-        <div className="flex flex-col items-center w-full gap-[8px]" style={{ flex: '0 0 auto' }}>
+        {/* Top Content - Logo, Heading, Description */}
+        <div className="flex flex-col items-center w-full gap-[8px]">
           
           {/* Logo */}
           <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -69,8 +69,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile - In the middle space, flex-grow centers it */}
-        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0 }}>
+        {/* Contact Section - Mobile - Centered */}
+        <div className="w-full flex justify-center items-center">
           <div style={{
             width: '220px',
             padding: '12px',
@@ -177,8 +177,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - Absolutely positioned at screen bottom, always visible */}
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '16px', pointerEvents: 'auto', zIndex: 20 }}>
+        {/* Bottom Tagline - Part of flow, not absolute */}
+        <div className="w-full flex justify-center">
           <div 
             className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
@@ -188,8 +188,6 @@ const MobileLayout = () => {
               display: 'inline-flex',
               justifyContent: 'center',
               alignItems: 'center',
-              background: 'white',
-              boxShadow: '0px 2px 8px rgba(0,0,0,0.07)'
             }}
           >
             <span style={{
@@ -237,7 +235,7 @@ const DesktopLayout = () => {
         <div 
           className="flex flex-col items-center w-full lg:gap-[32px] xl:gap-[36px]"
           style={{ 
-            marginTop: '100px' // Fixed for all desktop sizes - laptop spacing
+            marginTop: '60px' // Reduced from 100px - works for all screens
           }}
         >
           
