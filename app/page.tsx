@@ -148,7 +148,7 @@ const MobileLayout = () => {
         </div>
         
         {/* Gap before footer - small fixed space */}
-        <div style={{ height: '24px' }} />
+        <div style={{ height: '120px' }} />
         
         {/* Bottom Tagline - always visible */}
         <div className="text-[13px]" style={{
