@@ -28,15 +28,15 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Fixed spacing, everything visible */}
-      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between"
+      {/* Mobile Content Container - Like previous perfect version */}
+      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]"
            style={{ 
              paddingTop: '24px',
-             paddingBottom: '80px'
+             paddingBottom: 0
            }}>
         
-        {/* Top Content - Logo, Heading, Description */}
-        <div className="flex flex-col items-center w-full gap-[8px]">
+        {/* Top Content - Logo, Heading, Description - Fixed size */}
+        <div className="flex flex-col items-center w-full gap-[8px]" style={{ flex: '0 0 auto' }}>
           
           {/* Logo */}
           <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -69,8 +69,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile - Centered with flex-grow */}
-        <div className="w-full flex justify-center items-center">
+        {/* Contact Section - Mobile - In the middle space, flex-grow centers it */}
+        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0 }}>
           <div style={{
             width: '220px',
             padding: '12px',
@@ -283,8 +283,8 @@ const DesktopLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Desktop (minimal gap, tight like laptop) */}
-        <div className="w-full flex justify-center" style={{ marginTop: '24px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
+        {/* Contact Section - Desktop (minimal 12px gap) */}
+        <div className="w-full flex justify-center" style={{ marginTop: '12px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
           <div style={{
             width: '100%',
             padding: '24px',
