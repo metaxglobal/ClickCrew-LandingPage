@@ -29,7 +29,7 @@ const MobileLayout = () => {
       </div>
 
       {/* Mobile Content - Fixed compact spacing, footer always visible */}
-      <div className="relative z-10 w-full min-h-screen flex flex-col items-center px-4" style={{ paddingTop: '40px', paddingBottom: '24px' }}>
+      <div className="relative z-10 w-full min-h-screen flex flex-col items-center px-4" style={{ paddingTop: '80px', paddingBottom: '24px' }}>
         
         {/* Logo */}
         <div className="relative w-[145px] h-[29px]">
