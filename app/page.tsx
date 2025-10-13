@@ -28,54 +28,45 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Constrained to fit all content */}
-      <div className="relative z-10 w-full min-h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] py-2">
+      {/* Mobile Content Container - No scroll, all content fits */}
+      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-4">
         
-        {/* Main Content - With max-height to ensure bottom box is fully visible */}
-        <div 
-          className="flex items-center justify-center"
-          style={{ 
-            maxHeight: 'min(calc(100vh - 280px), calc(100dvh - 280px))', // More space for contact + bottom sections
-            flex: '0 0 auto',
-            minHeight: 0 
-          }}
-        >
-          <div className="flex flex-col items-center w-full gap-[8px] sm:gap-[10px] md:gap-[14px]">
-            
-            {/* Logo */}
-            <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
-              <Image
-                src="/logo.svg"
-                alt="ClickCrew Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+        {/* Top Content - Logo, Heading, Description */}
+        <div className="flex flex-col items-center w-full gap-[8px] sm:gap-[10px] md:gap-[14px]">
+          
+          {/* Logo */}
+          <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
+            <Image
+              src="/logo.svg"
+              alt="ClickCrew Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
 
-            {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[4px] sm:gap-[6px] md:gap-[8px]">
-              {/* Heading - Original size */}
-              <h1 
-                className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
-                style={{ lineHeight: '1.1' }}
-              >
-                Launching Soon🚀
-              </h1>
+          {/* Text Content */}
+          <div className="flex flex-col items-center w-full gap-[4px] sm:gap-[6px] md:gap-[8px]">
+            {/* Heading - Original size */}
+            <h1 
+              className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
+              style={{ lineHeight: '1.1' }}
+            >
+              Launching Soon🚀
+            </h1>
 
-              {/* Description - Original size */}
-              <p 
-                className="w-full text-[14px] sm:text-[16px] md:text-[18px] font-normal text-center text-[#767676] max-w-[290px] sm:max-w-[450px] md:max-w-[500px]"
-                style={{ lineHeight: '1.35', wordWrap: 'break-word' }}
-              >
-                We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
-              </p>
-            </div>
+            {/* Description - Original size */}
+            <p 
+              className="w-full text-[14px] sm:text-[16px] md:text-[18px] font-normal text-center text-[#767676] max-w-[290px] sm:max-w-[450px] md:max-w-[500px]"
+              style={{ lineHeight: '1.35', wordWrap: 'break-word' }}
+            >
+              We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
+            </p>
           </div>
         </div>
 
-        {/* Contact Section - Mobile - Positioned in middle with flex-grow */}
-        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto' }}>
+        {/* Contact Section - Mobile - Centered in middle */}
+        <div className="w-full flex justify-center items-center">
           <div style={{
             width: '220px',
             padding: '12px',
@@ -182,8 +173,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - Always visible at bottom */}
-        <div className="flex justify-center items-end pt-2" style={{ marginBottom: '12px' }}>
+        {/* Bottom Tagline - Stuck to bottom with marginBottom for visible space */}
+        <div className="flex justify-center items-end" style={{ marginBottom: '16px' }}>
           <div 
             className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
@@ -240,7 +231,7 @@ const DesktopLayout = () => {
         <div 
           className="flex flex-col items-center w-full lg:gap-[32px] xl:gap-[36px]"
           style={{ 
-            marginTop: 'max(120px, 15vh)' // Larger on bigger screens (15% of viewport height)
+            marginTop: 'clamp(100px, 18vh, 280px)' // Scales: 120px (laptop) to 280px (2K+)
           }}
         >
           
