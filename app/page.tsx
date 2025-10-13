@@ -28,11 +28,11 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Flexible spacing to fit all content */}
+      {/* Mobile Content Container - Flexible spacing, bottom tagline fixed */}
       <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]"
            style={{ 
-             paddingTop: 'clamp(40px, 20vh, 160px)',
-             paddingBottom: 'clamp(16px, 3vh, 24px)'
+             paddingTop: 'clamp(32px, 10vh, 80px)',
+             paddingBottom: 0
            }}>
         
         {/* Top Content - Logo, Heading, Description */}
@@ -69,8 +69,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile - Flexible positioning */}
-        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0 }}>
+  {/* Contact Section - Mobile - Flexible positioning */}
+  <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0, marginBottom: 'clamp(12px, 4vh, 32px)' }}>
           <div style={{
             width: '220px',
             padding: '12px',
@@ -177,8 +177,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - Stuck to bottom with flexible margin */}
-        <div className="flex justify-center items-end" style={{ marginTop: 'clamp(12px, 2vh, 20px)' }}>
+        {/* Bottom Tagline - Absolutely positioned at screen bottom, always visible */}
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '16px', pointerEvents: 'auto', zIndex: 20 }}>
           <div 
             className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
@@ -188,6 +188,8 @@ const MobileLayout = () => {
               display: 'inline-flex',
               justifyContent: 'center',
               alignItems: 'center',
+              background: 'white',
+              boxShadow: '0px 2px 8px rgba(0,0,0,0.07)'
             }}
           >
             <span style={{
@@ -281,8 +283,8 @@ const DesktopLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Desktop (82px gap before) */}
-        <div className="w-full flex justify-center" style={{ marginTop: '20px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
+        {/* Contact Section - Desktop (reduced gap for large screens) */}
+        <div className="w-full flex justify-center" style={{ marginTop: 'clamp(20px, 3vh, 40px)', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
           <div style={{
             width: '100%',
             padding: '24px',
