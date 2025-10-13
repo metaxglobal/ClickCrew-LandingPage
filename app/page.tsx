@@ -28,15 +28,15 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - Tight spacing, no scroll */}
-      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]"
+      {/* Mobile Content Container - Fixed spacing, everything visible */}
+      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between"
            style={{ 
-             paddingTop: 'clamp(20px, 6vh, 50px)',
-             paddingBottom: 0
+             paddingTop: '24px',
+             paddingBottom: '80px'
            }}>
         
         {/* Top Content - Logo, Heading, Description */}
-        <div className="flex flex-col items-center w-full" style={{ gap: 'clamp(4px, 1vh, 8px)' }}>
+        <div className="flex flex-col items-center w-full gap-[8px]">
           
           {/* Logo */}
           <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -50,7 +50,7 @@ const MobileLayout = () => {
           </div>
 
           {/* Text Content */}
-          <div className="flex flex-col items-center w-full" style={{ gap: 'clamp(4px, 1vh, 8px)' }}>
+          <div className="flex flex-col items-center w-full gap-[6px]">
             {/* Heading - Original size */}
             <h1 
               className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -69,8 +69,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile - Tight spacing */}
-        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0, marginTop: 'clamp(8px, 2vh, 16px)', marginBottom: 'clamp(8px, 2vh, 16px)' }}>
+        {/* Contact Section - Mobile - Centered with flex-grow */}
+        <div className="w-full flex justify-center items-center">
           <div style={{
             width: '220px',
             padding: '12px',
@@ -237,7 +237,7 @@ const DesktopLayout = () => {
         <div 
           className="flex flex-col items-center w-full lg:gap-[32px] xl:gap-[36px]"
           style={{ 
-            marginTop: 'clamp(100px, 18vh, 280px)' // Scales: 120px (laptop) to 280px (2K+)
+            marginTop: '100px' // Fixed for all desktop sizes - laptop spacing
           }}
         >
           
