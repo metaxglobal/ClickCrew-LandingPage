@@ -36,7 +36,7 @@ const MobileLayout = () => {
           className="flex items-center justify-center"
           style={{ 
             maxHeight: 'min(calc(100vh - 280px), calc(100dvh - 280px))', // More space for contact + bottom sections
-            flex: '1 1 auto',
+            flex: '0 0 auto',
             minHeight: 0 
           }}
         >
@@ -74,8 +74,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile */}
-        <div className="w-full flex justify-center mb-4 mt-1">
+        {/* Contact Section - Mobile - Positioned in middle with flex-grow */}
+        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto' }}>
           <div style={{
             width: '220px',
             padding: '12px',
@@ -240,7 +240,7 @@ const DesktopLayout = () => {
         <div 
           className="flex flex-col items-center w-full lg:gap-[32px] xl:gap-[36px]"
           style={{ 
-            marginTop: 'clamp(40px, 12vh, 120px)' // Responsive: smaller on larger screens
+            marginTop: 'max(120px, 15vh)' // Larger on bigger screens (15% of viewport height)
           }}
         >
           
