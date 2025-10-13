@@ -35,7 +35,7 @@ const MobileLayout = () => {
         <div 
           className="flex items-center justify-center"
           style={{ 
-            maxHeight: 'min(calc(100vh - 200px), calc(100dvh - 200px))', // More space reserved for contact + bottom sections
+            maxHeight: 'min(calc(100vh - 250px), calc(100dvh - 250px))', // More space reserved for contact + bottom sections
             flex: '1 1 auto',
             minHeight: 0 
           }}
@@ -75,9 +75,9 @@ const MobileLayout = () => {
         </div>
 
         {/* Contact Section - Mobile */}
-        <div className="w-full flex justify-center mb-3">
+        <div className="w-full flex justify-center mb-2 mt-2">
           <div style={{
-            width: '100%',
+            width: '220px',
             padding: '12px',
             background: 'white',
             boxShadow: '0px 4px 18px rgba(0, 0, 0, 0.13)',
@@ -232,14 +232,15 @@ const DesktopLayout = () => {
       {/* Desktop Content Container with proper spacing */}
       <div className="relative z-10 w-full h-full flex flex-col px-4 
                       lg:max-w-[800px] 
-                      xl:max-w-[1005px] 
-                      2xl:max-w-[1200px] 
-                      mx-auto py-8">
+                      xl:max-w-[800px] 
+                      2xl:max-w-[800px] 
+                      mx-auto justify-between py-12">
         
         {/* Top Section - Logo, Heading, Description */}
-        <div className="flex flex-col items-center w-full 
+        <div className="flex flex-col items-center w-full
                         lg:gap-[32px] 
-                        xl:gap-[36px]">
+                        xl:gap-[36px]"
+                        style={{ marginTop: '40px' }}>
           
           {/* Logo */}
           <div className="relative 
@@ -284,7 +285,7 @@ const DesktopLayout = () => {
         </div>
 
         {/* Contact Section - Desktop (82px gap before) */}
-        <div className="w-full flex justify-center" style={{ marginTop: '82px' }}>
+        <div className="w-full flex justify-center" style={{ marginTop: '82px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
           <div style={{
             width: '100%',
             padding: '24px',
@@ -393,8 +394,8 @@ const DesktopLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - With 129px gap from contact section */}
-        <div className="flex justify-center items-end" style={{ marginTop: '129px', marginBottom: '36px' }}>
+        {/* Bottom Tagline - Fixed at bottom */}
+        <div className="flex justify-center items-end" style={{ marginBottom: '36px' }}>
           <div 
             className="lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
