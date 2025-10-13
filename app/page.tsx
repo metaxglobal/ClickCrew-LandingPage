@@ -159,7 +159,7 @@ const MobileLayout = () => {
           padding: '10px',
           borderRadius: '12px',
           outline: '1px #D9D9D9 solid',
-          marginBottom: '40px'
+          marginBottom: '80px'
         }}>
           <span style={{
             textAlign: 'center',
