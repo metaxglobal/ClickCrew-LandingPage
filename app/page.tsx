@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-
+import { Building06Icon, Mail02Icon, Call02Icon } from 'hugeicons-react';
 
 /**
  * ClickCrew Landing Page Component
@@ -35,12 +35,12 @@ const MobileLayout = () => {
         <div 
           className="flex items-center justify-center"
           style={{ 
-            maxHeight: 'min(calc(100vh - 130px), calc(100dvh - 130px))', // Use dvh for better mobile browser support
+            maxHeight: 'min(calc(100vh - 200px), calc(100dvh - 200px))', // More space reserved for contact + bottom sections
             flex: '1 1 auto',
             minHeight: 0 
           }}
         >
-          <div className="flex flex-col items-center w-full gap-[10px] sm:gap-[14px] md:gap-[18px]">
+          <div className="flex flex-col items-center w-full gap-[8px] sm:gap-[10px] md:gap-[14px]">
             
             {/* Logo */}
             <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -54,7 +54,7 @@ const MobileLayout = () => {
             </div>
 
             {/* Text Content */}
-            <div className="flex flex-col items-center w-full gap-[6px] sm:gap-[8px] md:gap-[10px]">
+            <div className="flex flex-col items-center w-full gap-[4px] sm:gap-[6px] md:gap-[8px]">
               {/* Heading - Original size */}
               <h1 
                 className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -70,6 +70,114 @@ const MobileLayout = () => {
               >
                 We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Section - Mobile */}
+        <div className="w-full flex justify-center mb-3">
+          <div style={{
+            width: '100%',
+            padding: '12px',
+            background: 'white',
+            boxShadow: '0px 4px 18px rgba(0, 0, 0, 0.13)',
+            borderRadius: '12px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
+            gap: '10px'
+          }}>
+            <div style={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '16px'
+            }}>
+              <div style={{
+                width: '100%',
+                textAlign: 'center',
+                color: '#1E1E1E',
+                fontSize: '16px',
+                fontFamily: 'Bricolage Grotesque',
+                fontWeight: '700',
+                wordWrap: 'break-word'
+              }}>
+                Connect with us
+              </div>
+              
+              <div style={{
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '12px'
+              }}>
+                {/* Company */}
+                <div style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}>
+                  <Building06Icon size={16} color="#767676" strokeWidth={1.5} />
+                  <div style={{
+                    textAlign: 'center',
+                    color: '#767676',
+                    fontSize: '16px',
+                    fontFamily: 'Bricolage Grotesque',
+                    fontWeight: '400',
+                    wordWrap: 'break-word'
+                  }}>
+                    MXM Global (Pvt) Ltd.
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}>
+                  <Mail02Icon size={16} color="#767676" strokeWidth={1.5} />
+                  <div style={{
+                    textAlign: 'center',
+                    color: '#767676',
+                    fontSize: '16px',
+                    fontFamily: 'Bricolage Grotesque',
+                    fontWeight: '400',
+                    wordWrap: 'break-word'
+                  }}>
+                    info@metaxlobal.net
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}>
+                  <Call02Icon size={16} color="#767676" strokeWidth={1.5} />
+                  <div style={{
+                    textAlign: 'center',
+                    color: '#767676',
+                    fontSize: '16px',
+                    fontFamily: 'Bricolage Grotesque',
+                    fontWeight: '400',
+                    wordWrap: 'break-word'
+                  }}>
+                    ‪+91 84 7502 5534
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -126,59 +234,167 @@ const DesktopLayout = () => {
                       lg:max-w-[800px] 
                       xl:max-w-[1005px] 
                       2xl:max-w-[1200px] 
-                      mx-auto justify-between py-8">
+                      mx-auto py-8">
         
-        {/* Main Content - Centered with controlled spacing */}
-        <div className="flex-1 flex items-center justify-center min-h-0">
+        {/* Top Section - Logo, Heading, Description */}
+        <div className="flex flex-col items-center w-full 
+                        lg:gap-[32px] 
+                        xl:gap-[36px]">
+          
+          {/* Logo */}
+          <div className="relative 
+                          lg:w-[220px] lg:h-[44px]
+                          xl:w-[260px] xl:h-[52px]
+                          2xl:w-[300px] 2xl:h-[60px]">
+            <Image
+              src="/logo.svg"
+              alt="ClickCrew Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          {/* Text Content */}
           <div className="flex flex-col items-center w-full 
-                          lg:gap-[42px] 
-                          xl:gap-[48px]">
-            
-            {/* Logo */}
-            <div className="relative 
-                            lg:w-[220px] lg:h-[44px]
-                            xl:w-[260px] xl:h-[52px]
-                            2xl:w-[300px] 2xl:h-[60px]">
-              <Image
-                src="/logo.svg"
-                alt="ClickCrew Logo"
-                fill
-                className="object-contain"
-                priority
-              />
+                          lg:gap-[15px] 
+                          xl:gap-[18px]">
+            {/* Heading */}
+            <h1 
+              className="w-full font-bold text-center text-[#1E1E1E]
+                         lg:text-[48px]
+                         xl:text-[64px]
+                         2xl:text-[72px]"
+              style={{ lineHeight: '1.2' }}
+            >
+              Launching Soon🚀
+            </h1>
+
+            {/* Description */}
+            <p 
+              className="w-full font-normal text-center text-[#767676]
+                         lg:text-[20px] lg:max-w-[700px]
+                         xl:text-[24px] xl:max-w-[900px]
+                         2xl:text-[26px] 2xl:max-w-[1000px]"
+              style={{ lineHeight: '1.5', wordWrap: 'break-word' }}
+            >
+              We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
+            </p>
+          </div>
+        </div>
+
+        {/* Contact Section - Desktop (82px gap before) */}
+        <div className="w-full flex justify-center" style={{ marginTop: '82px' }}>
+          <div style={{
+            width: '100%',
+            padding: '24px',
+            background: 'white',
+            boxShadow: '0px 4px 18px rgba(0, 0, 0, 0.13)',
+            borderRadius: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            gap: '32px'
+          }}>
+            <div style={{
+              width: '100%',
+              textAlign: 'center',
+              color: '#1E1E1E',
+              fontSize: '24px',
+              fontFamily: 'Bricolage Grotesque',
+              fontWeight: '700',
+              wordWrap: 'break-word'
+            }}>
+              Connect with us
             </div>
+            
+            <div style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              gap: '23px'
+            }}>
+              {/* Company */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                <Building06Icon size={24} color="#767676" strokeWidth={1.5} />
+                <div style={{
+                  textAlign: 'center',
+                  color: '#767676',
+                  fontSize: '20px',
+                  fontFamily: 'Bricolage Grotesque',
+                  fontWeight: '400',
+                  wordWrap: 'break-word'
+                }}>
+                  MXM Global (Pvt) Ltd.
+                </div>
+              </div>
 
-            {/* Text Content */}
-            <div className="flex flex-col items-center w-full 
-                            lg:gap-[15px] 
-                            xl:gap-[18px]">
-              {/* Heading */}
-              <h1 
-                className="w-full font-bold text-center text-[#1E1E1E]
-                           lg:text-[48px]
-                           xl:text-[64px]
-                           2xl:text-[72px]"
-                style={{ lineHeight: '1.2' }}
-              >
-                Launching Soon🚀
-              </h1>
+              {/* Divider */}
+              <div style={{
+                width: '1.5px',
+                height: '22px',
+                background: '#767676'
+              }} />
 
-              {/* Description */}
-              <p 
-                className="w-full font-normal text-center text-[#767676]
-                           lg:text-[20px] lg:max-w-[700px]
-                           xl:text-[24px] xl:max-w-[900px]
-                           2xl:text-[26px] 2xl:max-w-[1000px]"
-                style={{ lineHeight: '1.5', wordWrap: 'break-word' }}
-              >
-                We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
-              </p>
+              {/* Email */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                <Mail02Icon size={24} color="#767676" strokeWidth={1.5} />
+                <div style={{
+                  textAlign: 'center',
+                  color: '#767676',
+                  fontSize: '20px',
+                  fontFamily: 'Bricolage Grotesque',
+                  fontWeight: '400',
+                  wordWrap: 'break-word'
+                }}>
+                  info@metaxlobal.net
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div style={{
+                width: '1.5px',
+                height: '22px',
+                background: '#767676'
+              }} />
+
+              {/* Phone */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                <Call02Icon size={24} color="#767676" strokeWidth={1.5} />
+                <div style={{
+                  textAlign: 'center',
+                  color: '#767676',
+                  fontSize: '20px',
+                  fontFamily: 'Bricolage Grotesque',
+                  fontWeight: '400',
+                  wordWrap: 'break-word'
+                }}>
+                  ‪+91 84 7502 5534
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Tagline - With proper spacing from bottom edge */}
-        <div className="flex justify-center items-end" style={{ marginBottom: '36px' }}>
+        {/* Bottom Tagline - With 129px gap from contact section */}
+        <div className="flex justify-center items-end" style={{ marginTop: '129px', marginBottom: '36px' }}>
           <div 
             className="lg:text-[18px] xl:text-[24px] 2xl:text-[26px]"
             style={{
