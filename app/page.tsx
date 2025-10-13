@@ -28,11 +28,15 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content Container - No scroll, all content fits */}
-      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px] justify-between py-4">
+      {/* Mobile Content Container - Flexible spacing to fit all content */}
+      <div className="relative z-10 w-full h-screen flex flex-col px-4 max-w-[343px] mx-auto sm:max-w-[540px] md:max-w-[688px]"
+           style={{ 
+             paddingTop: 'clamp(40px, 20vh, 160px)',
+             paddingBottom: 'clamp(16px, 3vh, 24px)'
+           }}>
         
         {/* Top Content - Logo, Heading, Description */}
-        <div className="flex flex-col items-center w-full gap-[8px] sm:gap-[10px] md:gap-[14px]">
+        <div className="flex flex-col items-center w-full" style={{ gap: 'clamp(6px, 1.5vh, 10px)' }}>
           
           {/* Logo */}
           <div className="relative w-[145px] h-[29px] sm:w-[180px] sm:h-[36px] md:w-[200px] md:h-[40px]">
@@ -46,7 +50,7 @@ const MobileLayout = () => {
           </div>
 
           {/* Text Content */}
-          <div className="flex flex-col items-center w-full gap-[4px] sm:gap-[6px] md:gap-[8px]">
+          <div className="flex flex-col items-center w-full" style={{ gap: 'clamp(4px, 1vh, 8px)' }}>
             {/* Heading - Original size */}
             <h1 
               className="w-full text-[26px] sm:text-[32px] md:text-[38px] font-bold text-center text-[#1E1E1E]"
@@ -65,8 +69,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Contact Section - Mobile - Centered in middle */}
-        <div className="w-full flex justify-center items-center">
+        {/* Contact Section - Mobile - Flexible positioning */}
+        <div className="w-full flex justify-center items-center" style={{ flex: '1 1 auto', minHeight: 0 }}>
           <div style={{
             width: '220px',
             padding: '12px',
@@ -173,8 +177,8 @@ const MobileLayout = () => {
           </div>
         </div>
 
-        {/* Bottom Tagline - Stuck to bottom with marginBottom for visible space */}
-        <div className="flex justify-center items-end" style={{ marginBottom: '16px' }}>
+        {/* Bottom Tagline - Stuck to bottom with flexible margin */}
+        <div className="flex justify-center items-end" style={{ marginTop: 'clamp(12px, 2vh, 20px)' }}>
           <div 
             className="text-[13px] sm:text-[14px] md:text-[15px]"
             style={{
