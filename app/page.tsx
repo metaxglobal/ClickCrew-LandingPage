@@ -35,7 +35,7 @@ const MobileLayout = () => {
         <div 
           className="flex items-center justify-center"
           style={{ 
-            maxHeight: 'min(calc(100vh - 250px), calc(100dvh - 250px))', // More space reserved for contact + bottom sections
+            maxHeight: 'min(calc(100vh - 280px), calc(100dvh - 280px))', // More space for contact + bottom sections
             flex: '1 1 auto',
             minHeight: 0 
           }}
@@ -75,7 +75,7 @@ const MobileLayout = () => {
         </div>
 
         {/* Contact Section - Mobile */}
-        <div className="w-full flex justify-center mb-2 mt-2">
+        <div className="w-full flex justify-center mb-4 mt-1">
           <div style={{
             width: '220px',
             padding: '12px',
@@ -237,10 +237,12 @@ const DesktopLayout = () => {
                       mx-auto justify-between py-12">
         
         {/* Top Section - Logo, Heading, Description */}
-        <div className="flex flex-col items-center w-full
-                        lg:gap-[32px] 
-                        xl:gap-[36px]"
-                        style={{ marginTop: '40px' }}>
+        <div 
+          className="flex flex-col items-center w-full lg:gap-[32px] xl:gap-[36px]"
+          style={{ 
+            marginTop: 'clamp(40px, 12vh, 120px)' // Responsive: smaller on larger screens
+          }}
+        >
           
           {/* Logo */}
           <div className="relative 
@@ -285,7 +287,7 @@ const DesktopLayout = () => {
         </div>
 
         {/* Contact Section - Desktop (82px gap before) */}
-        <div className="w-full flex justify-center" style={{ marginTop: '82px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
+        <div className="w-full flex justify-center" style={{ marginTop: '20px', flex: '1 1 auto', alignItems: 'center', display: 'flex' }}>
           <div style={{
             width: '100%',
             padding: '24px',
