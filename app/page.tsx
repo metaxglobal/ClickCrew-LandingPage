@@ -28,41 +28,44 @@ const MobileLayout = () => {
         />
       </div>
 
-      {/* Mobile Content - All content visible without scroll */}
-      <div className="relative z-10 w-full h-screen flex flex-col items-center justify-between px-4 py-8">
+      {/* Mobile Content - Fixed compact spacing, footer always visible */}
+      <div className="relative z-10 w-full min-h-screen flex flex-col items-center px-4" style={{ paddingTop: '40px', paddingBottom: '24px' }}>
         
-        {/* Top Section: Logo + Heading + Description */}
-        <div className="flex flex-col items-center" style={{ gap: '24px' }}>
-          {/* Logo */}
-          <div className="relative w-[145px] h-[29px]">
-            <Image
-              src="/logo.svg"
-              alt="ClickCrew Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          
-          {/* Heading and Description */}
-          <div style={{ width: '343px', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-            <h1 
-              className="w-full text-[31px] font-bold text-center text-[#1E1E1E]"
-              style={{ lineHeight: '1.2' }}
-            >
-              Launching Soon🚀
-            </h1>
-            
-            <p 
-              className="w-full text-[16px] font-normal text-center text-[#767676]"
-              style={{ lineHeight: '1.5' }}
-            >
-              We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
-            </p>
-          </div>
+        {/* Logo */}
+        <div className="relative w-[145px] h-[29px]">
+          <Image
+            src="/logo.svg"
+            alt="ClickCrew Logo"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
         
-        {/* Middle Section: Contact */}
+        {/* Gap after logo */}
+        <div style={{ height: '20px' }} />
+        
+        {/* Heading and Description */}
+        <div style={{ width: '343px', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+          <h1 
+            className="w-full text-[31px] font-bold text-center text-[#1E1E1E]"
+            style={{ lineHeight: '1.2' }}
+          >
+            Launching Soon🚀
+          </h1>
+          
+          <p 
+            className="w-full text-[16px] font-normal text-center text-[#767676]"
+            style={{ lineHeight: '1.5' }}
+          >
+            We're crafting something exciting to help freelancers and brands connect effortlessly. Stay tuned — the wait will be worth it.
+          </p>
+        </div>
+        
+        {/* Gap before contact */}
+        <div style={{ height: '24px' }} />
+        
+        {/* Contact Section */}
         <div style={{
           width: '220px',
           padding: '12px',
@@ -144,7 +147,10 @@ const MobileLayout = () => {
           </div>
         </div>
         
-        {/* Bottom Section: Footer Tagline */}
+        {/* Gap before footer - small fixed space */}
+        <div style={{ height: '24px' }} />
+        
+        {/* Bottom Tagline - always visible */}
         <div className="text-[13px]" style={{
           padding: '10px',
           borderRadius: '12px',
